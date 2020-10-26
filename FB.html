@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ells Chang | Facebook</title>
+    <link rel="Shortcut Icon" type="image/x-icon" href="img/fb.ico">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin:0;
+        }
+        #banner{
+            width: 100%;
+            height: 508.14px;
+            /* height: 568.14px; */
+            background-color:white;
+        }
+        #content{
+            width:100%;
+            height: 1340px;
+            /* height: 11vw; */
+            background-color: #F2F3F5;
+            padding: 0 110px;
+        }
+        .bar{
+            width: 100%;
+            height: 60px;
+            padding: 10px;
+            background-color: white;
+            position:fixed; /*固定位置定位*/
+            top:0px; /*距離上方 0 像素*/
+            z-index:1;/* 重疊時會在其他元素之上 */
+            box-shadow:0px 1px 5px rgba(0, 0, 0, 0.15);
+        }
+        .path{
+            width: 40px;
+            height: 39.78px;
+            /* background-color: deepskyblue; */
+            border-radius:50%;
+            margin:0 10px 0 5px;
+            background-image: url('img/fb.png');
+            background-position: center;
+            background-size: cover;
+        }
+        input{
+            width: 280px;
+            height: 40px;
+            background-color: #F0F2F5;
+            padding: 7px 32px 9px;
+            border-radius: 20px;
+            border-width: 0;
+            margin:0 -2px 0 0;
+            font-size: 16px;
+            font-weight: 400;
+            background-repeat: no-repeat;
+            background-position:left,bottom;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+        }
+        .home{
+            width: 111.59px;
+            height: 52px;
+            /* background-color: white; */
+            margin:8px 5px 5px 59px;
+        }
+        .home-p{
+            width: 28px;
+            height: 28px;
+            /* background-color: rgb(245, 245, 245); */
+            background-image: url('img/house.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: auto;
+        }
+        .player{
+            width: 111.59px;
+            height: 52px;
+            /* background-color: white; */
+            margin:5px 5px 5px 47px;
+        }
+        .player-p{
+            width: 28px;
+            height: 28px;
+            background-color: white;
+            background-image: url('img/ytb.png');
+            margin: auto;
+        }
+        .market{
+            width: 111.59px;
+            height: 52px;
+            /* background-color: white; */
+            margin:7px 5px 5px 50px;
+        }
+        .market-p{
+            width: 28px;
+            height: 28px;
+            background-color: white;
+            margin: auto;
+            background-image: url('img/market.png');
+            background-repeat: no-repeat;
+        }
+        .group{
+            width: 111.59px;
+            height: 52px;
+            /* background-color: white; */
+            margin:6px 5px 5px 47px;
+        }
+        .group-p{
+            width: 28px;
+            height: 28px;
+            background-color: white;
+            margin: auto;
+            background-image: url('img/group.png');
+        }
+        .game{
+            width: 111.59px;
+            height: 52px;
+            /* background-color: white; */
+            margin:6px 5px 5px 48px;
+        }
+        .game-p{
+            width: 28px;
+            height: 28px;
+            background-color: white;
+            margin: auto;
+            background-image: url('img/game.png');
+        }
+        .bannerbtn{
+            width: 66.64px;
+            height: 52px;
+        }
+        .userfunct{
+            width: 330px;
+            height: 45px;
+            margin: 0 -17px 0 0;
+        }
+        .profile{
+            width: 119.86px;
+            height: 36px;
+            background-color: #E7F3FF;
+            margin: 2px 5px 0 -4px;
+            border-radius: 20px;
+            /* margin: 0px 204px 0px 0; */
+        }
+        .profile-p{
+            width: 28px;
+            height: 28px;
+            background-color:gray;
+            border-radius: 50%;
+            float: left;
+            margin:4px 0px 4px 5px;
+            background-image: url('img/avatar.jpg');
+            background-size: cover;
+        }
+        .username{
+            height: 19px;
+            width: 70%;
+            font-size: 15px;
+            color: #1876F2;
+            float: left;
+            line-height: 19px;
+            margin: 8.5px 0px 8.5px 0;
+            text-align: center;
+            font-weight: 600;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+        }
+        .btnlist{
+            width: 204px;
+            height: 45px;
+            background-color: white;
+            padding: 0px 16px 20px 4px;
+        }
+        .add{
+            width: 40px;
+            height: 40px;
+            background-color: #E4E6EB;
+            border-radius: 50%;
+            margin:0 6px 0 0;
+            padding: 10px;
+        }
+        .mes{
+            width: 40px;
+            height: 40px;
+            background-color: #E4E6EB;
+            border-radius: 50%;
+            margin:0 6px 0 0;
+            padding: 10px;
+        }
+        .alert{
+            width: 40px;
+            height: 40px;
+            background-color: #E4E6EB;
+            border-radius: 50%;
+            margin:0 6px 0 0;
+            padding: 10px;
+        }
+        .select{
+            width: 40px;
+            height: 40px;
+            background-color: #E4E6EB;
+            border-radius: 50%;
+            margin:0 6px 0 0;
+            padding: 10px;
+        }
+        .banbtn-p{
+            width: 20px;
+            height: 20px;
+        }
+        .add-p{
+            background-image: url('img/add.png');
+            background-position: center;
+        }
+        .mes-p{
+            background-image: url('img/mes.png');
+            background-position: center;
+        }
+        .ale-p{
+            background-image: url('img/ale.png');
+            background-position: center;
+        }
+        .sel-p{
+            background-image: url('img/down2.png');
+            background-position: center;
+        }
+        .float-l{
+            float:left;
+        }
+        .float-r{
+            float: right;
+        }
+        .bground{
+            width: 100%;
+            height: 348.14px;
+            background-image: linear-gradient(to top, #FFFFFF 30%, rgb(20, 25, 35) 100%);
+            /* z-index: 1; */
+            margin: 60px 0 0 0;
+        }
+        .bgimg{
+            width: 940px;
+            height: 348.14px;
+            margin: auto;
+            /* background-color: springgreen; */
+            position: relative;
+            border-radius: 0 0 10px 10px;
+            background-image: url('img/bg.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+        .editphoto{
+            width: 142px;
+            height: 36px;
+            background-color: #E4E6EB;
+            border-radius: 5px;
+            position: absolute;
+            right:30px;
+            bottom:15px;
+            padding: 7px 5px;
+        }
+        .ediphctn{
+            width: 124px;
+            height: 19px;
+            /* padding:7px; */
+            /* margin:0 -3px; */
+        }
+        .edi-p{
+            width: 16px;
+            height: 16px;
+            background-image: url('img/edcma.png');
+            margin: 3px 5px 0 5px;
+        }
+        .edi-t{
+            width: 96px;
+            height: 19px;
+            text-align: center;
+            color: #050505;
+            /* margin:-3px 0; */
+            /* padding: 0 0 0 0.1px; */
+            float: right;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+        }
+        .icon{
+            width: 176px;
+            height: 176px;
+            /* background-color: wheat; */
+            border:4px  white;
+            border-style: solid;
+            border-radius: 50%;
+            position: absolute;
+            bottom:-17px;
+            right:386px;
+            background-image: url('img/avatar.jpg');
+            background-size: cover;
+        }
+        .camera{
+            width: 36px;
+            height: 36px;
+            background-color: #E4E6EB;
+            border-radius: 50%;
+            z-index: 1;
+
+            position: absolute;
+            bottom:10px;
+            right:3px;
+            padding: 8px;
+        }
+        .ca-p{
+            width: 20px;
+            height: 20px;
+            background-image: url('img/camera.png');
+        }
+        .button{
+            width: 100%;
+            height: 60px;
+            background-color: white;
+            box-shadow:0px 1px 0px rgba(0, 0, 0, 0.1);
+            float: left;
+        }
+        .buttonarea{
+            width: 876px;
+            height: 60px;
+            background-color: white;
+            margin: auto;
+            border-top: 1px solid rgba(128, 128, 128, 0.4);
+        }
+        .btn-l-area{
+            width: 525.53px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0);
+        }
+        .btn-r-area{
+            width: 310px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0);
+            padding: 12px 0;
+            margin: 0 0 0 40px;
+        }
+        .btn-l-area .btn{
+            padding:16px;
+            font-size: 15px;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            color:#656768;
+        }
+        .frd{
+            margin-right: 4px;
+        }
+        .frd-n{
+            font-weight: 400;
+            margin: 4px 0 0 0;
+            width: 21.03px;
+            height: 17px;
+            font-size: 9px;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+        }
+        .btn-w-blue{
+            color: #1876F2;
+            padding:16px;
+            font-size: 15px;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            border-bottom: 4px solid #1876F2;
+        }
+        .btn-r-area .btn{
+            width: 48px;
+            height: 36px;
+            background-color: #E4E6EB;
+            border-radius: 10px;
+            margin-right: 6px;
+        }
+        .btn-more{
+            width: 48px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0);
+            padding: 16px 0;
+            margin: 0 15px;
+        }
+        .more1{
+            width: 32px;
+            height: 19px;
+            font-size: 15px;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            color:#656768;
+            margin: auto;
+        }
+        .more2{
+            width: 16px;
+            height: 16px;
+            background-image: url('img/down.png');
+        }
+        .btn-ed{
+            width: 142px;
+            height: 36px;
+            background-color: #E4E6EB;
+            border-radius: 10px;
+            margin: 0 6px 0 0;
+            padding: 8px 2px 0 10px;
+        }
+        .btn-ed-ar{
+            font-weight: 600;
+            width: 124px;
+            height: 16px;
+        }
+        .btn-ed-p{
+            width: 16px;
+            height: 16px;
+            background-image: url('img/pen.png');
+            margin:3px 5px 0 0;
+        }
+        .btn-ed-t{
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            color: #050505;
+        }  .btn-wd{
+            padding: 10px 16px;
+        }
+        .btn-eye-p{
+            width: 16px;
+            height: 16px;
+            background-image: url('img/eye.png');
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .btn-tobig-p{
+            width: 16px;
+            height: 16px;
+            background-image: url('img/tobig.png');
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .btn-dot-p{
+            width: 16px;
+            height: 16px;
+            background-image: url('img/3dot.png');
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .name{
+            width:100%;
+            height: 100px;
+            background-color: white
+        }
+        .namearea{
+            width: 888px;
+            height: 80px;
+            background-color: white;
+            margin: auto;
+            padding: 26px 0;
+        }
+        .nametext{
+            margin: auto;
+            height: 38px;
+            width: 153.75px;
+            background-color: white;
+            text-align: center;
+            color: #050505;
+            font-size: 32px;
+            font-weight: 700;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+        }
+        .selfadd{
+            width: 96px;
+            height: 20px;
+            font-size: 15px;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+            margin: auto;
+            color: #1876F2;
+            font-weight: 600;
+        }
+    
+        .container{
+            width:100%;
+        }
+        #banner .container{
+            width:100%;
+        }
+        #content .container{
+            width: 960px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0);
+            margin:auto;
+        }
+        .box-shadow{
+            box-shadow:0px 1px 0px rgba(0, 0, 0, 0.2);
+        }
+        .page-l{
+            width: 360px;
+            /* height: 100%; */
+            height: 1255px;
+            /* max-height: 1255px; */
+            /* height: 50vw; */
+            background-color: rgba(255, 255, 255, 0);
+            padding: 8px;
+            /* background-color: steelblue; */
+            margin:0 0 0 33px
+        }
+        .intro{
+            width: 360px;
+            height: 201px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .intro-tit{
+            width: 328px;
+            height: 24px;
+            color: #050505;
+            margin: 15px 16px 0 16px;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+        }
+        .intro-live{
+            width: 340px;
+            height: 32px;
+            margin: 10px 0 0 10px;
+        }
+        .intro-live-p{
+            width: 32px;
+            height: 32px;
+            background-image: url('img/livehouse.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 6px;
+        }
+        .intro-live-t{
+            width: 308px;
+            height: 23px;
+            padding: 5px;
+        }
+        .intro-live-t-l{
+            width: 32px;
+            height: 23px;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+        }
+        .intro-live-t-r{
+            width: 168px;
+            height: 23px;
+            font-weight: 700;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+        }
+        .intro-edit{
+            width: 328px;
+            height: 36px;
+            background-color: #E4E6EB;
+            padding: 6px 0px 0 0;
+            border-radius: 10px;
+            margin:5px 0 0 16px;
+        }
+        .intro-feat{
+            width: 328px;
+            height: 36px;
+            background-color: #E4E6EB;
+            padding:6px 0 0 0px;
+            border-radius: 10px;
+            margin:20px 0 0 16px;
+        }
+        .intro-text{
+            width: 100%;
+            height: 19px;
+            color: #050505;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            text-align: center;
+        }
+        .photo{
+            width: 360px;
+            height: 402.97px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 16px;
+        }
+        .photo-top{
+            width: 360px;
+            height: 39px;
+        }
+        .photo-t-p{
+            /* background-color: khaki; */
+            width: 42px;
+            height: 27px;
+            color: #050505;
+            margin: 12px 0 6px 17px;
+            font-weight: 600;
+            font-size: 20px;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+        }
+        .photo-t-c{
+            /* background-color: lawngreen; */
+            width: 68px;
+            height: 20px;
+            color: #1876F2;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            /* font-weight: 600; */
+            margin: 15px 16px 9.5px 0;
+        }
+        .photo-bot{
+            /* background-color: lightcoral; */
+            width: 372px;
+            height: 335.97px;
+            margin: -6px;
+            padding: 16px 16px 0;
+        }
+        .photo-bp{
+            width: 340px;
+            height: 339.97px;
+            padding: 6px;
+            /* background-color: lightslategrey; */
+            /* margin: 0 16px 0 16px; */
+        }
+        .photo-p{
+            /* background-color: lightgreen; */
+            width: 106.66px;
+            height: 106.66px;
+            margin: 0 0 4px 2.5px;
+        }
+        .cir-1{
+            border-radius: 10px 0 0 0;
+        }
+        .cir-2{
+            border-radius: 0 10px 0 0;
+        }
+        .cir-3{
+            border-radius:  0 0 10px 0;
+        }
+        .cir-4{
+            border-radius:  0 0 0 10px;
+        }
+        .photo-p1{
+            background-image: url('img/9gon/1.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .photo-p2{
+            background-image: url('img/9gon/2.jpg');
+            background-size: cover;
+            background-position: center;
+        }.photo-p3{
+            background-image: url('img/9gon/3.jpg');
+            background-size: cover;
+            background-position: center;
+        }.photo-p4{
+            background-image: url('img/9gon/4.jpg');
+            background-size: cover;
+            background-position: center;
+        }.photo-p5{
+            background-image: url('img/9gon/5.jpg');
+            background-size: cover;
+            background-position: center;
+        }.photo-p6{
+            background-image: url('img/9gon/6.jpg');
+            background-size: cover;
+            background-position: center;
+        }.photo-p7{
+            background-image: url('img/9gon/7.jpg');
+            background-size: cover;
+            background-position: center;
+        }.photo-p8{
+            background-image: url('img/9gon/8.jpg');
+            background-size: cover;
+            background-position: center;
+        }.photo-p9{
+            background-image: url('img/9gon/9.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .friend{
+            width: 360px;
+            height: 550.45px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 16px;
+        }
+        .fri-t{
+            width: 360px;
+            height: 63px;
+            /* background-color: lime; */
+            padding: 20px 0 4px;
+        }
+        .fri-t-text{
+            width: 328px;
+            height: 51px;
+            margin: -6px 0;
+            /* background-color: mediumblue; */
+        }
+        .fri-t-text-t{
+            width: 328px;
+            height: 24px;
+            margin: 0 0 0px 14px;
+            /* background-color: mediumpurple; */
+        }
+        .fri-t-text-t-l{
+            width: 252px;
+            height: 24px;
+            /* background-color: red; */
+            color: #050505;
+            font-weight: 600;
+            font-size: 20px;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+        }
+        .fri-t-text-t-r{
+            width: 68px;
+            height: 24px;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+            color: #1876F2;
+            font-size: 17px;
+            margin: 5px 0 0 0;
+        }
+        .fri-t-text-b{
+            width: 328px;
+            height: 20px;
+            color: #656768;
+            margin: 5px 0 0 0;
+            font-size: 17px;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+        }
+        .fri-b{
+            width: 372px;
+            height: 479.45px;
+            margin: 5px -6px -6px -6px;
+            padding: 16px 16px 0;
+            /* background-color: magenta; */
+        }
+        .fri-b-p{
+            width: 360px;
+            height: 463.45px;
+            /* background-color: mediumseagreen; */
+        }
+        .fri-b-p-area{
+            width: 101.98px;
+            height: 142.48px;
+            /* background-color: saddlebrown; */
+            margin: 4px 5.5px;
+        }
+        .fri-b-p-area-p{
+            width: 101.98px;
+            height: 101.98px;
+            border-radius: 10px;
+            /* background-color: snow; */
+        }
+        .fri-b-p-area-ta{
+            width: 101.98px;
+            height: 32.5px;
+            margin: 8px 0px 0px;
+            /* background-color: springgreen; */
+        }
+        .fri-b-p-area-ta-t{
+            width: 101.98px;
+            height: 16px;
+            color: #050505;
+            font-weight: 600;
+            font-size: 13px;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+            margin: -2px 0 -4px;
+        }
+        .fri-pic1{
+            background-image: url('img/9f/1.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fri-pic2{
+            background-image: url('img/9f/2.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fri-pic3{
+            background-image: url('img/9f/3.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fri-pic4{
+            background-image: url('img/9f/4.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fri-pic5{
+            background-image: url('img/9f/5.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fri-pic6{
+            background-image: url('img/9f/6.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fri-pic7{
+            background-image: url('img/9f/7.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fri-pic8{
+            background-image: url('img/9f/8.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .fri-pic9{
+            background-image: url('img/9f/9.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .privacy{
+            width: 360px;
+            height: 32.5px;
+            background-image: url('img/privacy.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 16px 0 0 0;
+        }
+        .page-r{
+            width: 500px;
+            height: 100%;
+            margin: 8px 42px 0 0px;
+        }
+        .timeline-t1{
+            width: 500px;
+            height: 119px;
+            background-color: white;
+            padding: 12px 16px 10px;
+            border-radius: 10px;
+        }
+        .tt1t{
+            width: 468px;
+            height: 40px;
+            /* background-color: steelblue; */
+        }
+        .tt1t-p{
+            width: 40px;
+            height: 40px;
+            /* background-color: violet; */
+            background-image: url('img/avatar.jpg');
+            /* background-position: */
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 100%;
+            margin: 0 8px 0 0;
+        }
+        .tt1t-ip{
+            width: 420px;
+            height: 40px;
+            font-size: 17px;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+            border-radius: 20px;
+            background-color: #F0F2F5;
+            padding: 0 12px;
+        }
+        .tt1b{
+            width: 468px;
+            height: 45px;
+            /* background-color: turquoise; */
+            margin: 10px 0 0 0;
+        }
+        .tt1b-box{
+            width: 156px;
+            height: 36px;
+            /* background-color: tomato; */
+            padding: 8px;
+            /* margin: 10px 0 0 0; */
+            border-top: 1px solid rgba(128, 128, 128, 0.4);
+        }
+        .tt1b-box-p{
+            width: 20px;
+            height: 20px;
+            margin: 10px 8px 0 20px;
+        }
+        .tt1b-box-p1{
+            background-image: url('img/tl/photo.png');
+        }
+        .tt1b-box-p2{
+            background-image: url('img/tl/person.png');
+        }
+        .tt1b-box-p3{
+            background-image: url('img/tl/flag.png');
+        }
+        .tt1b-box-t{
+            height: 19px;
+            margin: 12px 0 0 0;
+            color: #656768;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .timeline-t2{
+            width: 500px;
+            height: 93px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 16px;
+        }
+        .t2-t{
+            width: 512px;
+            height: 64px;
+            margin: -6px;
+            padding: 0 12px;
+            /* background-color: tomato; */
+            /* border-bottom: 1px solid rgba(128, 128, 128, 0.4); */
+        }
+        .t2-t-post{
+            width: 42px;
+            height: 24px;
+            font-size: 20px;
+            color:#050505;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+            font-weight: 600;
+            margin: 18px 0 20px 10px;
+        }
+        .t2-t-rbox{
+            width: 238px;
+            height: 52px;
+            padding: 8px 0;
+            /* background-color: turquoise; */
+            margin: 7px 0 7px 0;
+        }
+        .t2-t-rbox-lit{
+            width: 110px;
+            height: 36px;
+            background-color: #E4E6EB;
+            padding: 0 12px;
+            border-radius: 10px;
+            margin: 0 9px 0 0px;
+        }
+        .t2-t-rbox-lit-p{
+            width: 16px;
+            height: 16px;
+            margin: 10px 0 0 0;
+        }
+        .t2-p1{
+            background-image: url('img/tl/switch.png');
+        }
+        .t2-p2{
+            background-image: url('img/tl/config.png');
+        }
+        .t2-t-rbox-lit-t{
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            color: #050505;
+            margin: 7.5px 0 0 5px;
+        }
+        .t2-b{
+            width: 100%;
+            height: 40px;
+            border-top: 1px solid rgba(128, 128, 128, 0.4);
+        }
+        .t2-b-box{
+            width: 238px;
+            height: 40px;
+            /* border-bottom: 2px solid rgba(128, 128, 128, 0.4); */
+        }
+        .t2-b-boxl{
+            width: 238px;
+            height: 40px;
+            border-bottom: 3px solid #1876f2;
+        }
+        .t2-b-border{
+            /* border-bottom: 3px solid #1876f2; */
+        }
+        .t2-b-box-p{
+            width: 16px;
+            height: 16px;
+            margin: 12px 0 0 95px;
+        }
+        .t2b-p1{
+            background-image: url('img/tl/sel.png');
+            background-position: center;
+        }
+        .t2b-p2{
+            background-image: url('img/tl/dia.png');
+            background-position: center;
+        }
+        .t2-b-box-t{
+            width: 64px;
+            height: 19px;
+            font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            margin: 8px 0 0 4px;
+        }
+        .t2-b-tcolorblue{
+            color: #1876f2;
+        }
+        .t2-b-tcolorblack{
+            color: #656768;
+        }
+        .timeline-t3{
+            width: 500px;
+            height: 535.5px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 16px;
+        }
+        .timeline-t4{
+            width: 500px;
+            height: 524.33px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <div class="bar">
+            <div class="path float-l"></div>
+            <input type="text" style="background-image: url('img/2big.png');" class="float-l" placeholder="搜尋 Facebook">
+            <div class="home float-l bannerbtn">
+                <div class="home-p"></div>
+            </div>
+            <div class="player float-l bannerbtn">
+                <div class="player-p"></div>
+            </div>
+            <div class="market float-l bannerbtn">
+                <div class="market-p"></div>
+            </div>
+            <div class="group float-l bannerbtn">
+                <div class="group-p"></div>
+            </div>
+            <div class="game float-l bannerbtn">
+                <div class="game-p"></div>
+            </div>
+            <div class="userfunct float-r">
+                <div class="profile float-l">
+                    <div class="profile-p float-l"></div>
+                    <div class="username">Ells Chang</div>
+                </div>
+                <div class="btnlist float-l">
+                    <div class="add float-l">
+                        <div class="banbtn-p add-p"></div>
+                    </div>
+                    <div class="mes float-l">
+                        <div class="banbtn-p mes-p"></div>
+                    </div>
+                    <div class="alert float-l">
+                        <div class="banbtn-p ale-p"></div>
+                    </div>
+                    <div class="select float-l">
+                        <div class="banbtn-p sel-p"></div>
+                    </div>
+                </div> 
+            </div>                      
+        </div>
+        <div class="container"></div>
+        <div class="bground">
+            <div class="bgimg">
+                <div class="editphoto float-l">
+                    <div class="ediphctn float-l">
+                        <div class="edi-p float-l"></div>
+                        <div class="edi-t float-l">編輯封面相片</div>
+                    </div>
+                </div>
+                <div class="icon">
+                    <div class="camera">
+                        <div class="ca-p"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="name">
+            <div class="namearea">
+                <div class="nametext">Ells Chang</div>
+                <div class="selfadd">新增個人簡介</div>
+            </div>
+        </div>
+        <div class="button">
+            <div class="buttonarea">
+                <div class="btn-l-area float-l">
+                    <div class="float-l btn-w-blue">動態時報</div>
+                    <div class="btn float-l">關於</div>
+                    <div class="btn float-l">
+                        <div class="frd float-l">朋友</div>
+                        <div class="frd-n float-l">412</div>
+                    </div>
+                    <div class="btn float-l">相片</div>
+                    <div class="btn float-l">典藏</div>
+                    <div class="btn float-l">影片</div>
+                    <div class="btn-more float-l ">
+                        <div class="more1 float-l">更多</div>
+                        <div class="more2 float-l"></div>
+                    </div>
+                </div> 
+                <div class="btn-r-area float-l">
+                    <div class="btn-ed float-l">
+                        <div class="btn-ed-ar">
+                            <div class="btn-ed-p float-l"></div>
+                            <div class="btn-ed-t float-l">編輯個人檔案</div>
+                        </div>
+                    </div>
+                    <div class="btn float-l btn-wd">
+                        <div class="btn-eye-p"></div>
+                    </div>
+                    <div class="btn float-l btn-wd">
+                        <div class="btn-tobig-p"></div>
+                    </div>
+                    <div class="btn float-l btn-wd">
+                        <div class="btn-dot-p"></div>
+                    </div>
+                </div>     
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="container">
+            <div class="page-l float-l">
+                <div class="intro float-l box-shadow">
+                    <div class="intro-tit">簡介</div>
+                    <div class="intro-live">
+                        <div class="intro-live-p float-l"></div>
+                        <div class="intro-live-t float-l">
+                            <div class="intro-live-t-l float-l">現居</div>
+                            <div class="intro-live-t-r float-l">台中市</div>
+                        </div>
+                    </div>
+                    <div class="intro-edit">
+                        <div class="intro-text">編輯詳細資料</div>
+                    </div>
+                    <div class="intro-feat">
+                        <div class="intro-text">編輯精選</div>
+                    </div>
+                </div>
+                <div class="photo float-l box-shadow">
+                    <div class="photo-top float-l">
+                        <div class="photo-t-p float-l">相片</div>
+                        <div class="photo-t-c float-r">查看全部</div>
+                    </div>
+                    <div class="photo-bot float-l">
+                        <div class="photo-bp float-l">
+                            <div class="photo-p float-l photo-p1 cir-1"></div>
+                            <div class="photo-p float-l photo-p2"></div>
+                            <div class="photo-p float-l photo-p3 cir-2"></div>
+                            <div class="photo-p float-l photo-p4"></div>
+                            <div class="photo-p float-l photo-p5"></div>
+                            <div class="photo-p float-l photo-p6"></div>
+                            <div class="photo-p float-l photo-p7 cir-4"></div>
+                            <div class="photo-p float-l photo-p8"></div>
+                            <div class="photo-p float-l photo-p9 cir-3"></div>
+                        </div>    
+                    </div>                    
+                </div>
+                <div class="friend float-l box-shadow">
+                    <div class="fri-t float-l">
+                        <div class="fri-t-text float-l">
+                            <div class="fri-t-text-t float-l">
+                                <div class="fri-t-text-t-l float-l">朋友</div>
+                                <div class="fri-t-text-t-r float-r">查看全部</div>
+                            <div class="fri-t-text-b float-l">412 位朋友</div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="fri-b float-l">
+                        <div class="fri-b-p-area float-l">
+                            <div class="fri-b-p-area-p float-l fri-pic1"></div>
+                            <div class="fri-b-p-area-ta float-l">
+                                <div class="fri-b-p-area-ta-t float-l">Pei Chen</div>
+                            </div>
+                        </div>
+                        <div class="fri-b-p-area float-l">
+                            <div class="fri-b-p-area-p float-l fri-pic2"></div>
+                            <div class="fri-b-p-area-ta float-l">
+                                <div class="fri-b-p-area-ta-t float-l">Fu Jhen Yang</div>
+                            </div>
+                        </div>
+                        <div class="fri-b-p-area float-l">
+                            <div class="fri-b-p-area-p float-l fri-pic3"></div>
+                            <div class="fri-b-p-area-ta float-l">
+                                <div class="fri-b-p-area-ta-t float-l">郭厚承</div>
+                            </div>
+                        </div>
+                        <div class="fri-b-p-area float-l">
+                            <div class="fri-b-p-area-p float-l fri-pic4"></div>
+                            <div class="fri-b-p-area-ta float-l">
+                                <div class="fri-b-p-area-ta-t float-l">YunSun Lee</div>
+                            </div>
+                        </div>
+                        <div class="fri-b-p-area float-l">
+                            <div class="fri-b-p-area-p float-l fri-pic5"></div>
+                            <div class="fri-b-p-area-ta float-l">
+                                <div class="fri-b-p-area-ta-t float-l">許大娃</div>
+                            </div>
+                        </div>
+                        <div class="fri-b-p-area float-l">
+                            <div class="fri-b-p-area-p float-l fri-pic6"></div>
+                            <div class="fri-b-p-area-ta float-l">
+                                <div class="fri-b-p-area-ta-t float-l">應采容</div>
+                            </div>
+                        </div>
+                        <div class="fri-b-p-area float-l">
+                            <div class="fri-b-p-area-p float-l fri-pic7"></div>
+                            <div class="fri-b-p-area-ta float-l">
+                                <div class="fri-b-p-area-ta-t float-l">Livi Jhan</div>
+                            </div>
+                        </div>
+                        <div class="fri-b-p-area float-l">
+                            <div class="fri-b-p-area-p float-l fri-pic8"></div>
+                            <div class="fri-b-p-area-ta float-l">
+                                <div class="fri-b-p-area-ta-t float-l">余啟豪</div>
+                            </div>
+                        </div>
+                        <div class="fri-b-p-area float-l">
+                            <div class="fri-b-p-area-p float-l fri-pic9"></div>
+                            <div class="fri-b-p-area-ta float-l">
+                                <div class="fri-b-p-area-ta-t float-l">張閒嫌</div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="privacy float-l"></div>  
+        </div>
+        <div class="page-r float-r">
+            <div class="timeline-t1 float-l box-shadow">
+                <div class="tt1t float-l">
+                    <div class="tt1t-p float-l"></div>
+                    <input type="text" float-l placeholder="在想些什麼？" class="tt1t-ip">
+                </div>
+                <div class="tt1b float-l">
+                    <div class="tt1b-box float-l">
+                        <div class="tt1b-box-p float-l tt1b-box-p1"></div>
+                        <div class="tt1b-box-t float-l">相片／影片</div>
+                    </div>
+                    <div class="tt1b-box float-l">
+                        <div class="tt1b-box-p float-l tt1b-box-p2"></div>
+                        <div class="tt1b-box-t float-l">標註好友</div>
+                    </div>
+                    <div class="tt1b-box float-l">
+                        <div class="tt1b-box-p float-l tt1b-box-p3"></div>
+                        <div class="tt1b-box-t float-l">生活要事</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-t2 float-l box-shadow">
+                <div class="t2-t float-l">
+                    <div class="t2-t-post float-l">貼文</div>
+                    <div class="t2-t-rbox float-r">
+                        <div class="t2-t-rbox-lit float-l">
+                            <div class="t2-t-rbox-lit-p float-l t2-p1"></div>
+                            <div class="t2-t-rbox-lit-t float-l">篩選條件</div>
+                        </div>
+                        <div class="t2-t-rbox-lit float-l">
+                            <div class="t2-t-rbox-lit-p float-l t2-p2"></div>
+                            <div class="t2-t-rbox-lit-t float-l">管理貼文</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t2-b float-l">
+                    <div class="t2-b-boxl float-l t2-b-border">
+                        <div class="t2-b-box-p float-l t2b-p1"></div>
+                        <div class="t2-b-box-t float-l t2-b-tcolorblue">清單檢視</div>
+                    </div>
+                    <div class="t2-b-box float-l">
+                        <div class="t2-b-box-p float-l t2b-p2"></div>
+                        <div class="t2-b-box-t float-l t2-b-tcolorblack">網格檢視</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-t3 float-l box-shadow"></div>
+            <div class="timeline-t4 float-l box-shadow"></div>
+        </div>
+    </div>
+</body>
+</html>
