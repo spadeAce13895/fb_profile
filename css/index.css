@@ -1,0 +1,519 @@
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        /* height: 3000px; */
+        padding-top: 80px;
+    }
+
+    h1{
+        display: none;
+    }
+
+    .float-l {
+        float: left;
+    }
+
+    .float-r {
+        float: right;
+    }
+
+    a:active {
+
+        text-decoration: none;
+        color: white;
+    }
+
+    #nav {
+        width: 100%;
+        height: 80px;
+        /* background-color: rgb(218, 218, 218); */
+        display: flex;
+        background-image: url('../img/nav.jpg');
+        background-size: cover;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    #nav .nav-l {
+        width: calc(50% - 35px);
+        padding: 0 0 0 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+    }
+
+    li {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .mask {
+        height: 100%;
+        width: 100%;
+    }
+
+    #nav .mask-color {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    #banner .mask-color {
+        display: flex;
+    }
+
+    #nav .mask {
+        display: flex;
+    }
+
+    #nav .nav-l>ul {
+        width: 70px;
+        height: 50px;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    #nav .nav-l>ul>li {
+        display: none;
+        color: white;
+        width: 100px;
+        height: 30px;
+        text-align: left;
+        position: relative;
+        top: -50%;
+        left: 35%;
+    }
+
+    #nav .nav-l>ul:hover>li {
+        display: block;
+    }
+
+    #nav .nav-c {
+        width: 70px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+
+    }
+
+    #nav .nav-c .logo {
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        background-color: rgb(97, 159, 160);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('../img/atp.png');
+        background-size: cover;
+        border: 1px solid white;
+    }
+    
+    #nav .nav-c .logo:hover {
+        background-image: url('../img/home.png');
+        transition: 0.5s;
+    }
+
+    #nav .nav-r {
+        width: calc(50% - 35px);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    #nav .nav-r .btn-grp {
+        width: 350px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #nav .nav-r .btn-grp .btn {
+        border-radius: 10px;
+        height: 50px;
+        color: white;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 50px;
+    }
+
+    a:link,
+    a:visited {
+
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    #nav .nav-r .btn-grp .btn a:hover {
+        font-size: 25px;
+        text-decoration: none;
+        transition: 0.5s;
+        color: rgb(42, 87, 25);
+    }
+
+    #banner {
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: rgb(245, 242, 199);
+        background-image: url('../img/banner.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #banner .transphoto {
+        width: 400px;
+        height: 600px;
+        background-image: url('../img/ban.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    #trans-djo{
+        width: 100%;
+        height: 100%;
+        background-image: url('../img/ban/djoko.jpg');
+        display: none;
+        background-position: center;
+        background-size: cover;
+    }
+    #trans-fed{
+        width: 100%;
+        height: 100%;
+        background-image: url('../img/ban/feder.jpg');
+        display: none;
+        background-position: center;
+        background-size: cover;
+    }
+    #trans-nad{
+        width: 100%;
+        height: 100%;
+        background-image: url('../img/ban/nadal.jpg');
+        display: none;
+        background-position: center;
+        background-size: cover;
+    }
+    #trans-mur{
+        width: 100%;
+        height: 100%;
+        background-image: url('../img/ban/murray.jpg');
+        display: none;
+        background-position: center;
+        background-size: cover;
+    }
+    #banner #trans-djo:target,
+    #banner #trans-fed:target,
+    #banner #trans-nad:target,
+    #banner #trans-mur:target
+    {
+	/** Remove default browser outline */
+    outline: none;
+	/** Unhide lightbox **/
+	display: block;
+}
+
+
+    #banner .btn-grp {
+        width: 600px;
+        height: 400px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        /* background-color: burlywood; */
+        position: relative;
+    }
+
+    #banner .btn-grp a {
+        position: relative;       /* z-index: 1; */
+    }
+
+    #banner .btn-grp a .btn {
+        width: 180px;
+        height: 180px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 100%;
+        position: absolute;
+        color: white;
+        font-size: 35px;
+        line-height: 180px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    #banner .btn-grp a:nth-child(1) {
+        top: -40%;
+        left: 25%;
+    }
+
+    #banner .btn-grp a:nth-child(2) {
+        top: 0%;
+        left: 50%;
+    }
+
+    #banner .btn-grp a:nth-child(3) {
+        top: 40%;
+        left: 25%;
+    }
+
+    #banner .btn-grp a:nth-child(4) {
+        top: 80%;
+        left: 50%;
+    }
+
+    #banner .btn-grp a .btn:hover {
+        color: rgb(87, 87, 87);
+        transform: scale(1.1);
+        transition:all 0.5s ease 0s;
+    }
+
+    #banner .ban-text {
+        color: rgba(214, 214, 214, 0.8);
+        font-size: 60px;
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+    }
+
+    #content {
+        width: 100%;
+        background-color: rgb(218, 218, 218);
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #content .container {
+        width: 1300px;
+        /* height: 1100px; */
+        /* background-color: rgb(114, 167, 149); */
+        background-image: url('../img/grass.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    #content .container .cardgroup {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-around;
+        align-content: space-around;
+        flex-wrap: wrap;
+        padding: 30px 0 0 0;
+    }
+
+    #content .container .cardgroup .card {
+        width: 600px;
+        height: 500px;
+        /* background-color: black; */
+    }
+
+    #content .container .cardgroup .card .card-p {
+        width: 100%;
+        height: 330px;
+        background-color: cadetblue;
+    }
+
+    #content .container .cardgroup .card:nth-child(1) .card-p {
+        background-image: url('../img/card/djoko.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #content .container .cardgroup .card:nth-child(1) .card-p:hover {
+        transform: scale(1.1);
+        transition:all 0.5s ease 0s;
+    }
+
+
+    #content .container .cardgroup .card:nth-child(2) .card-p {
+        background-image: url('../img/card/feder.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #content .container .cardgroup .card:nth-child(2) .card-p:hover {
+        transform: scale(1.1);
+        transition:all 0.5s ease 0s;
+    }
+
+    #content .container .cardgroup .card:nth-child(3) .card-p {
+        background-image: url('../img/card/nadal.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #content .container .cardgroup .card:nth-child(3) .card-p:hover {
+        transform: scale(1.1);
+        transition:all 0.5s ease 0s;
+    }
+
+    #content .container .cardgroup .card:nth-child(4) .card-p {
+        background-image: url('../img/card/murry.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #content .container .cardgroup .card:nth-child(4) .card-p:hover {
+        transform: scale(1.1);
+        transition:all 0.5s ease 0s;
+    }
+
+    #content .container .cardgroup .card .card-p .more {
+        display: none;
+    }
+
+    #content .container .cardgroup .card .card-p:hover .more {
+        display: block;
+        height: 330px;
+        width: 100%;
+        color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(0, 0, 0, 0.3);
+        font-size: 35px;
+        line-height: 330px;
+        text-align: center;
+        transition: 3s;
+        font-weight: 600;
+        
+    }
+
+    #content .container .cardgroup .card .card-t {
+        max-height: 170px;
+        padding: 20px;
+        background-color: rgb(255, 255, 255);
+        color: black;
+    }
+
+    #footer {
+        width: 100%;
+        height: 90px;
+        background-color: rgb(181, 204, 146);
+        line-height: 90px;
+        text-align: center;
+        color: rgb(46, 46, 46);
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    @media(max-width:1000px) {
+
+
+        #banner {
+            height: unset;
+            align-content: space-between;
+            justify-content: space-between;
+            flex-direction: column-reverse;
+            padding: 30px 0 50px 0;
+        }
+
+        
+
+        #banner .btn-grp {
+            width: 100%;
+            height: 120px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* background-color: burlywood; */
+            position: relative;
+        }
+        #banner .btn-grp a .btn {
+            width: 100px;
+            height: 100px;
+            font-size: 18px;
+            line-height: 100px;
+        }
+        #banner .btn-grp a {
+            width: 100px;
+            height: 100px;
+            position:unset;
+        }
+
+        #banner .transphoto {
+            margin: 50px 0 0 0;        
+        }
+    }
+
+    @media(max-width: 600px) {
+
+        #nav .nav-r{
+            position: relative;
+        }
+        #nav .nav-r .btn-grp {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            /* background-color: rgb(209, 209, 209); */
+            background-image: url('../img/ham.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            right: 10px;
+            flex-wrap: wrap;
+        }
+        #nav .nav-r .btn-grp:hover a{
+            /* position: absolute; */
+            color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(50, 119, 131, 0.5);
+            display: block;
+        }
+        #nav .nav-r .btn-grp a{
+            margin-right: 130px; 
+            width: 85px;
+            text-align: center;           
+            display: none;
+        }
+        #nav .nav-r .btn-grp a .btn{            
+            width: 100%;
+            text-align: left;
+        }
+        
+
+        
+        #content{
+            padding: 0;
+        }
+        #content .container {
+            width: 100%;
+        }
+        #content .container .cardgroup {
+            width: 100%;
+        }
+        #content .container .cardgroup .card {
+            width: 100%;
+        }
+        #content .container .cardgroup .card .card-p{
+            width: 100%;
+        }
+        #content .container .cardgroup .card .card-t{
+            width: 100%;
+            max-height: unset;
+        }
+    }

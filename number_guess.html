@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>命運的猜數字</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        h1 {
+            margin: 0;
+            text-align: center;
+        }
+
+        .main {
+            width: 100%;
+            height: 100vh;
+            background-color: cornsilk;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .pic img {
+            width: 400px;
+            height: 250px;
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 35%;
+            animation-name: tobig;
+            animation-duration: 2s;
+        }
+
+        img.active {
+            display: block;
+        }
+
+        .gameCanvas {
+            width: 400px;
+            height: 250px;
+            background-color: rgb(160, 160, 160);
+            border: 5px solid gray;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .gameCanvas.active {
+            position: absolute;
+            top: 50%;
+            left: 35%;
+        }
+
+        input {
+            width: 200px;
+            height: 35px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 50px 0;
+        }
+
+        #btn {
+            width: 200px;
+            height: 50px;
+            background-color: ivory;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            font-weight: 900;
+            transition: .3s;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #btn:hover {
+            background-color: rgb(26, 26, 24);
+            color: white;
+        }
+
+        #btn:active {
+            transition: .1s;
+            background-color: red;
+            color: white;
+        }
+
+        @keyframes tobig {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="pic">
+            <img class="img" src="">
+        </div>
+        <div class="gameCanvas">
+            <h1>猜數字，錯了會出事</h1>
+            <input name="num" id="ipt" type="text">
+            <div id="btn">送出答案</div>
+        </div>
+    </div>
+
+    <script>
+
+        var ans = "27"
+        var btn = document.querySelector("#btn")
+        var img = document.querySelector(".img")
+        var gamebox = document.querySelector(".gameCanvas")
+  
+        btn.onclick = function () {
+            var num = document.getElementById('ipt').value
+    
+            
+            if (num == ans) {                          
+                
+                gamebox.classList.add('active')
+                img.classList.add('active')
+                img.src = "img/corret.gif"
+                alert("Corret!")
+            }
+            else {
+                if (num > 27) {
+                    gamebox.classList.add('active')
+                    img.classList.add('active')
+                    img.src = "img/wrong.gif"
+                    if (num > 9999) {
+                        gamebox.classList.add('active')
+                        img.classList.add('active')
+                        img.src = "img/9999.gif"
+                        alert('是在哈佛?')
+                    }
+                    else {
+                        alert('數字太大，你出事我來扛。')
+                    }
+                }
+                else {
+                    if (num == 0) {
+                        gamebox.classList.add('active')
+                        img.classList.add('active')
+                        img.src = "img/zero.gif"
+                        alert('川普：這是我們希望的新增確診數。')
+                    }
+                    else {
+                        gamebox.classList.add('active')
+                        img.classList.add('active')
+                        img.src = "img/wrong.gif"
+                        alert('數字太小，你出事我來扛。')
+                    }
+                }
+            }
+        }
+        // alert("交給你們了喔 (*ﾟ∀ﾟ*)")
+
+
+    </script>
+</body>
+
+</html>

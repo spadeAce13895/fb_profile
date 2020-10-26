@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cards{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            
+        }
+        .weather_card{
+     border: 1px solid;
+     width: 25%;   
+     text-align: center;
+     margin: 20px 0;
+    }
+    .red{
+        color: red;
+    }
+    .blue{
+        color: blue;
+    }
+    .green{
+        color: green;
+    }
+    </style>
+</head>
+<body>
+    <div class="cards">
+        <!-- <div class="weather_card">
+            <img src="./img/sun.png" id="weather_pic" width="100px" height="100px" alt="">
+            <h1>台中市</h1>
+            <p>天氣概況</p>
+            <p>體感</p>
+            <p>最高溫:XXC</p>
+            <p>最高溫:XXC</p>
+            <p>降雨機率:XX%</p>
+        </div> -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        var cards = document.querySelector('.cards')
+        var img = document.getElementById('weather_pic')
+        var MaxT_fontcolor= ""
+        var MinT_fontcolor= ""
+
+        
+axios.get('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-B5282D9D-8FDD-40E9-AD48-B1DF3270465D')
+            .then(function (response) {
+                // handle success 
+                
+
+                response_data=response.data
+                // console.log(response_data);            
+            
+                var locations = response_data.records.location
+                
+
+            locations.forEach(every_location => {
+                var location_name=every_location.locationName;
+                var weather=every_location.weatherElement[0].time[0].parameter.parameterName
+                var feel=every_location.weatherElement[3].time[0].parameter.parameterName
+                var MaxT=every_location.weatherElement[4].time[0].parameter.parameterName
+                var MinT=every_location.weatherElement[2].time[0].parameter.parameterName
+                var rain_rate=every_location.weatherElement[1].time[0].parameter.parameterName
+                  
+               if(rain_rate>'1') {
+                  src='./img/cloud.jpg'
+                 }else{
+                  src='./img/sun.png'
+                }
+
+                if(MaxT>35){MaxT_fontcolor="class=red"
+                }else{
+                    if(MaxT<27){MaxT_fontcolor="class=blue"}
+                    else{MaxT_fontcolor="class=green"}              
+                }
+
+                if(MinT>35){MinT_fontcolor="class=red"
+                }else{
+                    if(MinT<27){MinT_fontcolor="class=blue"}
+                    else{MinT_fontcolor="class=green"}              
+                }
+                
+                cards.innerHTML=cards.innerHTML+ `
+                <div class="weather_card">
+                    <img src=${src} id="weather_pic" width="100px" height="100px" alt="">
+            <h1>${location_name}</h1>
+            <p>${weather}</p>
+            <p>${feel}</p>
+            <p ${MaxT_fontcolor}>最高溫:${MaxT}C</p>
+            <p ${MinT_fontcolor}>最低溫:${MinT}C</p>
+            <p>降雨機率:${rain_rate}%</p>
+        </div>
+                `
+            });
+
+        })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+
+    </script>
+</body>
+</html>
